@@ -1,7 +1,6 @@
 package com.fernandez.categorias.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,6 @@ import com.fernandez.categorias.adapter.CategoriesAdapter;
 import com.fernandez.categorias.dto.CategoryDTO;
 import com.fernandez.categorias.repository.CategoriesTranslationRepository;
 import com.fernandez.categorias.repository.CategoryRepository;
-import com.fernandez.entities.common.model.Category;
 import com.fernandez.entities.common.model.CategoryTranslation;
 import com.fernandez.entities.common.model.Language;
 import com.fernandez.languages.consumer.LanguageConsumer;

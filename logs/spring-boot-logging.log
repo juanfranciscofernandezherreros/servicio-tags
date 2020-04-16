@@ -1,240 +1,491 @@
-2020-04-14 00:01:06.549 DEBUG 28432 --- [http-nio-auto-5-exec-5] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:01:06.561 DEBUG 28432 --- [http-nio-auto-5-exec-5] org.hibernate.SQL                        : select count(categorytr0_.id) as col_0_0_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
-2020-04-14 00:01:38.150 DEBUG 28432 --- [http-nio-auto-5-exec-4] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:02:01.917  INFO 28432 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:06:10.555 DEBUG 28432 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:07:01.931  INFO 28432 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:08:48.240 DEBUG 28432 --- [http-nio-auto-5-exec-9] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
-2020-04-14 00:08:52.554 ERROR 28432 --- [http-nio-auto-5-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
-
-org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
-	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:85) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:122) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:777) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:669) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:310) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at com.fernandez.languages.consumer.LanguageConsumer.obtenerIdiomaPorIso2(LanguageConsumer.java:22) ~[classes/:na]
-	at com.fernandez.categorias.services.CategoriesService.retreiveAll(CategoriesService.java:39) ~[classes/:na]
-	at com.fernandez.categorias.controller.CategoriesController.categories(CategoriesController.java:38) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
-
-2020-04-14 00:08:54.870 ERROR 28432 --- [http-nio-auto-5-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
-
-org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
-	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:85) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:122) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:777) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:669) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:310) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at com.fernandez.languages.consumer.LanguageConsumer.obtenerIdiomaPorIso2(LanguageConsumer.java:22) ~[classes/:na]
-	at com.fernandez.categorias.services.CategoriesService.retreiveAll(CategoriesService.java:39) ~[classes/:na]
-	at com.fernandez.categorias.controller.CategoriesController.categories(CategoriesController.java:38) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.14.jar:9.0.14]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
-
-2020-04-14 00:09:03.074 DEBUG 28432 --- [http-nio-auto-5-exec-2] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:09:03.076 DEBUG 28432 --- [http-nio-auto-5-exec-2] org.hibernate.SQL                        : select count(categorytr0_.id) as col_0_0_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
-2020-04-14 00:11:47.352 DEBUG 28432 --- [http-nio-auto-5-exec-5] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:12:01.944  INFO 28432 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:12:34.387  INFO 28432 --- [RMI TCP Connection(69)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2020-04-14 00:12:34.399  INFO 28432 --- [RMI TCP Connection(69)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
-2020-04-14 00:12:34.399  WARN 28432 --- [RMI TCP Connection(69)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586815954399, current=DOWN, previous=UP]
-2020-04-14 00:12:34.399  INFO 28432 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:eab982d3f9ea1dae4a56721652cce552: registering service...
-2020-04-14 00:12:34.399  INFO 28432 --- [RMI TCP Connection(69)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-04-14 00:12:34.399  INFO 28432 --- [RMI TCP Connection(69)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-04-14 00:12:34.399  INFO 28432 --- [RMI TCP Connection(69)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2020-04-14 00:17:42.169  INFO 22788 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
-2020-04-14 00:17:43.479  INFO 22788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2020-04-14 00:17:43.555  INFO 22788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 2 repository interfaces.
-2020-04-14 00:17:43.727  WARN 22788 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2020-04-14 00:17:43.977  INFO 22788 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
-2020-04-14 00:17:44.118  INFO 22788 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$662216f4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-14 00:17:44.133  INFO 22788 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$e5a26426] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-14 00:17:44.133  INFO 22788 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$823c19f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-14 00:17:44.889  INFO 22788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2020-04-14 00:17:44.911  INFO 22788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 00:17:44.911  INFO 22788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
-2020-04-14 00:17:44.911  INFO 22788 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;%M2_HOME%\bin;%JAVA_HOME%;C:\Program Files\nodejs\;%M2_HOME%\bin;C:\Users\HP PC\AppData\Roaming\npm;C:\Users\HP PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Software\sts-4.4.2.RELEASE;;.]
-2020-04-14 00:17:45.051  INFO 22788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 00:17:45.051  INFO 22788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2867 ms
-2020-04-14 00:17:45.270  WARN 22788 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-04-14 00:17:45.270  INFO 22788 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-04-14 00:17:45.286  INFO 22788 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2d49e522
-2020-04-14 00:17:46.692  INFO 22788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 00:17:46.804  INFO 22788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 00:17:46.867  INFO 22788 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2020-04-16 20:06:14.310  INFO 48324 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:06:15.529  INFO 48324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:06:15.596  INFO 48324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 2 repository interfaces.
+2020-04-16 20:06:15.767  WARN 48324 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-16 20:06:15.958  INFO 48324 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:06:16.079  INFO 48324 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de7c75c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:06:16.095  INFO 48324 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$8d68148e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:06:16.103  INFO 48324 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2a01ca59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:06:16.826  INFO 48324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:06:16.848  INFO 48324 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:06:16.849  INFO 48324 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:06:16.855  INFO 48324 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;%M2_HOME%\bin;%JAVA_HOME%;C:\Program Files\nodejs\;%M2_HOME%\bin;C:\Users\HP PC\AppData\Roaming\npm;C:\Users\HP PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\HP PC\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;%M2_HOME\bin%;C:\Program Files\Docker Toolbox;C:\Software\sts-4.4.2.RELEASE;;.]
+2020-04-16 20:06:16.980  INFO 48324 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:06:16.981  INFO 48324 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2650 ms
+2020-04-16 20:06:17.185  WARN 48324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:06:17.186  INFO 48324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:06:17.196  INFO 48324 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@46b1bbc
+2020-04-16 20:06:18.669  INFO 48324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-16 20:06:18.772  INFO 48324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-16 20:06:18.844  INFO 48324 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-04-14 00:17:46.929  INFO 22788 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2020-04-14 00:17:46.929  INFO 22788 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2020-04-14 00:17:47.058  INFO 22788 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2020-04-14 00:17:47.199  INFO 22788 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2020-04-14 00:17:47.777  INFO 22788 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
-2020-04-14 00:17:48.108  INFO 22788 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-04-14 00:17:48.202  WARN 22788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2020-04-14 00:17:49.235  WARN 22788 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2020-04-14 00:17:49.236  INFO 22788 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2020-04-14 00:17:49.550  INFO 22788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 00:17:49.597  WARN 22788 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-04-14 00:17:50.784  INFO 22788 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-04-14 00:17:50.947  INFO 22788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56718 (http) with context path ''
-2020-04-14 00:17:50.947  INFO 22788 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 56718
-2020-04-14 00:17:50.962  INFO 22788 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2020-04-14 00:17:50.994  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2020-04-14 00:17:51.258  INFO 22788 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2020-04-14 00:17:51.258  INFO 22788 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2020-04-14 00:17:51.383  INFO 22788 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2020-04-14 00:17:51.383  INFO 22788 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2020-04-14 00:17:51.571  INFO 22788 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2020-04-14 00:17:51.680  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2020-04-14 00:17:51.868  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2020-04-14 00:17:51.882  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2020-04-14 00:17:51.882  INFO 22788 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2020-04-14 00:17:51.882  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1586816271882 with initial instances count: 4
-2020-04-14 00:17:51.898  INFO 22788 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
-2020-04-14 00:17:51.898  INFO 22788 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1586816271898, current=UP, previous=STARTING]
-2020-04-14 00:17:51.898  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ed2e6027bdfcef30a8f8af7cc8e0d1f4: registering service...
-2020-04-14 00:17:51.898  INFO 22788 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 10.803 seconds (JVM running for 11.553)
-2020-04-14 00:17:51.967  INFO 22788 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ed2e6027bdfcef30a8f8af7cc8e0d1f4 - registration status: 204
-2020-04-14 00:20:08.524  INFO 22788 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 00:20:08.525  INFO 22788 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 00:20:08.556  INFO 22788 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
-2020-04-14 00:20:09.252 ERROR 22788 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
+2020-04-16 20:06:18.930  INFO 48324 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2020-04-16 20:06:18.932  INFO 48324 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-04-16 20:06:19.095  INFO 48324 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-16 20:06:19.246  INFO 48324 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:06:19.856  INFO 48324 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:06:20.093  INFO 48324 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:06:20.192  WARN 48324 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:06:21.183  WARN 48324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:06:21.184  INFO 48324 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:06:21.487  INFO 48324 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:06:21.539  WARN 48324 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:06:22.854  INFO 48324 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:06:23.018  INFO 48324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64586 (http) with context path ''
+2020-04-16 20:06:23.020  INFO 48324 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64586
+2020-04-16 20:06:23.026  INFO 48324 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:06:23.067  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:06:23.382  INFO 48324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:06:23.382  INFO 48324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:06:23.501  INFO 48324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:06:23.502  INFO 48324 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:06:23.670  INFO 48324 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:06:23.842  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:06:23.843  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:06:23.843  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:06:23.843  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:06:23.843  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:06:23.844  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:06:23.844  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:06:24.006  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:06:24.009  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:06:24.011  INFO 48324 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:06:24.015  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587060384014 with initial instances count: 1
+2020-04-16 20:06:24.021  INFO 48324 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:06:24.022  INFO 48324 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060384022, current=UP, previous=STARTING]
+2020-04-16 20:06:24.024  INFO 48324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ac2925b8478913365e6f7f954b09ab50: registering service...
+2020-04-16 20:06:24.028  INFO 48324 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 10.963 seconds (JVM running for 11.822)
+2020-04-16 20:06:24.070  INFO 48324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ac2925b8478913365e6f7f954b09ab50 - registration status: 204
+2020-04-16 20:07:03.772  INFO 48324 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-16 20:07:03.773  INFO 48324 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-16 20:07:03.797  INFO 48324 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2020-04-16 20:07:04.044 ERROR 48324 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null] with root cause
+
+org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:79) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:124) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:777) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:669) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:310) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at com.fernandez.languages.consumer.LanguageConsumer.obtenerIdiomaPorIso2(LanguageConsumer.java:22) ~[classes/:na]
+	at com.fernandez.categorias.services.CategoriesService.retreiveAll(CategoriesService.java:37) ~[classes/:na]
+	at com.fernandez.categorias.controller.CategoriesController.categories(CategoriesController.java:38) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106) ~[spring-boot-actuator-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.14.jar:9.0.14]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-04-16 20:11:23.847  INFO 48324 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:11:37.908  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-04-16 20:11:37.910  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
+2020-04-16 20:11:37.910  WARN 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060697910, current=DOWN, previous=UP]
+2020-04-16 20:11:37.911  INFO 48324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ac2925b8478913365e6f7f954b09ab50: registering service...
+2020-04-16 20:11:37.918  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:11:37.921  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:11:37.929  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-16 20:11:37.930  INFO 48324 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ac2925b8478913365e6f7f954b09ab50 - registration status: 204
+2020-04-16 20:11:37.932  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-16 20:11:37.941  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:ac2925b8478913365e6f7f954b09ab50 - deregister  status: 200
+2020-04-16 20:11:37.950  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-16 20:11:37.950  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-16 20:11:37.956  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-16 20:11:38.108  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-04-16 20:11:38.110  INFO 48324 --- [RMI TCP Connection(14)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-04-16 20:11:43.448  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:11:44.908  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:11:44.979  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 2 repository interfaces.
+2020-04-16 20:11:45.171  WARN 35704 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-04-16 20:11:45.395  INFO 35704 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:11:45.527  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f308232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:11:45.546  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eb0cf64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:11:45.555  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab4a852f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:11:46.321  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:11:46.345  INFO 35704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:11:46.346  INFO 35704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:11:46.352  INFO 35704 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_221\jre\bin;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;%M2_HOME%\bin;%JAVA_HOME%;C:\Program Files\nodejs\;%M2_HOME%\bin;C:\Users\HP PC\AppData\Roaming\npm;C:\Users\HP PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\HP PC\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;%M2_HOME\bin%;C:\Program Files\Docker Toolbox;C:\Software\sts-4.4.2.RELEASE;;.]
+2020-04-16 20:11:46.485  INFO 35704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:11:46.486  INFO 35704 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3021 ms
+2020-04-16 20:11:46.732  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:11:46.733  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:11:46.743  INFO 35704 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@76a77d4d
+2020-04-16 20:11:48.494  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-16 20:11:48.602  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-16 20:11:48.676  INFO 35704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-16 20:11:48.751  INFO 35704 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2020-04-16 20:11:48.752  INFO 35704 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-04-16 20:11:48.909  INFO 35704 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-16 20:11:49.048  INFO 35704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:11:49.650  INFO 35704 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:11:49.888  INFO 35704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:11:50.000  WARN 35704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:11:51.204  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:11:51.204  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:11:51.604  INFO 35704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:11:51.669  WARN 35704 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:11:53.395  INFO 35704 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:11:53.671  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64742 (http) with context path ''
+2020-04-16 20:11:53.672  INFO 35704 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64742
+2020-04-16 20:11:53.683  INFO 35704 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:11:53.748  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:11:54.119  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:11:54.120  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:11:54.287  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:11:54.287  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:11:54.570  INFO 35704 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:11:54.746  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:11:54.747  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:11:54.747  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:11:54.747  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:11:54.748  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:11:54.748  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:11:54.748  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:11:54.951  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:11:54.955  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:11:54.958  INFO 35704 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:11:54.962  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587060714961 with initial instances count: 4
+2020-04-16 20:11:54.970  INFO 35704 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:11:54.971  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060714971, current=UP, previous=STARTING]
+2020-04-16 20:11:54.974  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:43fc0951174f87d1597290cbdfae1b26: registering service...
+2020-04-16 20:11:54.980  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 12.887 seconds (JVM running for 13.821)
+2020-04-16 20:11:55.028  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:43fc0951174f87d1597290cbdfae1b26 - registration status: 204
+2020-04-16 20:13:12.505  INFO 35704 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-16 20:13:12.505  INFO 35704 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-16 20:13:12.538  INFO 35704 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2020-04-16 20:13:13.064  INFO 35704 --- [http-nio-auto-1-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-04-16 20:13:13.206 DEBUG 35704 --- [http-nio-auto-1-exec-1] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:13:24.331 DEBUG 35704 --- [http-nio-auto-1-exec-1] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:13:34.913 DEBUG 35704 --- [http-nio-auto-1-exec-1] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:13:50.978 DEBUG 35704 --- [http-nio-auto-1-exec-9] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:13:50.981 DEBUG 35704 --- [http-nio-auto-1-exec-9] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:13:50.984 DEBUG 35704 --- [http-nio-auto-1-exec-9] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:14:06.686 DEBUG 35704 --- [http-nio-auto-1-exec-8] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:14:06.690 DEBUG 35704 --- [http-nio-auto-1-exec-8] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:14:06.693 DEBUG 35704 --- [http-nio-auto-1-exec-8] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:15:55.404  INFO 35704 --- [Thread-2] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
+2020-04-16 20:15:55.404  WARN 35704 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060955404, current=DOWN, previous=UP]
+2020-04-16 20:15:55.405  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:43fc0951174f87d1597290cbdfae1b26: registering service...
+2020-04-16 20:15:55.409  INFO 35704 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:15:55.413  INFO 35704 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:15:55.419  INFO 35704 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-16 20:15:55.421  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:43fc0951174f87d1597290cbdfae1b26 - registration status: 204
+2020-04-16 20:15:55.423  INFO 35704 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-16 20:15:55.433  INFO 35704 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:43fc0951174f87d1597290cbdfae1b26 - deregister  status: 200
+2020-04-16 20:15:55.441  INFO 35704 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-16 20:15:55.441  INFO 35704 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-16 20:15:55.448  INFO 35704 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-16 20:15:56.568  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:15:57.493  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:15:57.513  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 2 repository interfaces.
+2020-04-16 20:15:57.618  INFO 35704 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:15:57.659  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f308232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:15:57.661  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eb0cf64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:15:57.664  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab4a852f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:15:57.855  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:15:57.859  INFO 35704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:15:57.860  INFO 35704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:15:57.881  INFO 35704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:15:57.881  INFO 35704 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1309 ms
+2020-04-16 20:15:58.529  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-16 20:15:58.535  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-16 20:15:58.551  INFO 35704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-16 20:15:58.562  INFO 35704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:15:58.639  INFO 35704 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:15:58.726  INFO 35704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:15:58.753  WARN 35704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:15:59.016  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:15:59.016  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:15:59.103  INFO 35704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:15:59.121  WARN 35704 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:15:59.799  INFO 35704 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:15:59.877  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64915 (http) with context path ''
+2020-04-16 20:15:59.878  INFO 35704 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64915
+2020-04-16 20:15:59.881  INFO 35704 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:15:59.889  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:15:59.893  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:15:59.894  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:15:59.894  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:15:59.895  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:16:00.047  INFO 35704 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:16:00.063  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:16:00.075  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:16:00.077  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:16:00.078  INFO 35704 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:16:00.079  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587060960079 with initial instances count: 3
+2020-04-16 20:16:00.082  INFO 35704 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:16:00.082  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060960082, current=UP, previous=STARTING]
+2020-04-16 20:16:00.083  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:6f86d098be95086f4a6e2e03615c8707: registering service...
+2020-04-16 20:16:00.086  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 4.176 seconds (JVM running for 258.927)
+2020-04-16 20:16:00.092  INFO 35704 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-04-16 20:16:00.104  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:6f86d098be95086f4a6e2e03615c8707 - registration status: 204
+2020-04-16 20:16:26.308  INFO 35704 --- [Thread-19] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
+2020-04-16 20:16:26.309  WARN 35704 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060986309, current=DOWN, previous=UP]
+2020-04-16 20:16:26.310  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:6f86d098be95086f4a6e2e03615c8707: registering service...
+2020-04-16 20:16:26.322  INFO 35704 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:26.328  INFO 35704 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:26.335  INFO 35704 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-16 20:16:26.350  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:6f86d098be95086f4a6e2e03615c8707 - registration status: 204
+2020-04-16 20:16:26.351  INFO 35704 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-16 20:16:26.359  INFO 35704 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:6f86d098be95086f4a6e2e03615c8707 - deregister  status: 200
+2020-04-16 20:16:26.366  INFO 35704 --- [Thread-19] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-16 20:16:26.367  INFO 35704 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-04-16 20:16:26.372  INFO 35704 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-04-16 20:16:27.471  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:16:28.350  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:16:28.367  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 2 repository interfaces.
+2020-04-16 20:16:28.468  INFO 35704 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:16:28.503  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f308232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:28.505  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eb0cf64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:28.508  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab4a852f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:28.690  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:16:28.692  INFO 35704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:16:28.692  INFO 35704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:16:28.712  INFO 35704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:16:28.712  INFO 35704 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1238 ms
+2020-04-16 20:16:29.294  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-04-16 20:16:29.300  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-04-16 20:16:29.315  INFO 35704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-16 20:16:29.326  INFO 35704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:16:29.397  INFO 35704 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:16:29.484  INFO 35704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:29.508  WARN 35704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:16:29.718  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:16:29.718  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:16:29.792  INFO 35704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:29.810  WARN 35704 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:16:30.354  INFO 35704 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:16:30.422  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64941 (http) with context path ''
+2020-04-16 20:16:30.423  INFO 35704 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64941
+2020-04-16 20:16:30.426  INFO 35704 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:16:30.433  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:16:30.440  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:16:30.441  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:16:30.441  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:16:30.442  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:16:30.583  INFO 35704 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:16:30.584  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:16:30.584  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:16:30.585  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:16:30.585  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:16:30.585  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:16:30.585  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:16:30.585  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:16:30.595  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:16:30.596  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:16:30.597  INFO 35704 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:16:30.599  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587060990599 with initial instances count: 3
+2020-04-16 20:16:30.601  INFO 35704 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:16:30.602  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587060990602, current=UP, previous=STARTING]
+2020-04-16 20:16:30.602  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:244073984864b3cfe05ae4f07a96fc3d: registering service...
+2020-04-16 20:16:30.605  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 3.651 seconds (JVM running for 289.446)
+2020-04-16 20:16:30.611  INFO 35704 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-04-16 20:16:30.619  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:244073984864b3cfe05ae4f07a96fc3d - registration status: 204
+2020-04-16 20:16:46.733  INFO 35704 --- [Thread-35] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
+2020-04-16 20:16:46.733  WARN 35704 --- [Thread-35] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587061006733, current=DOWN, previous=UP]
+2020-04-16 20:16:46.734  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:244073984864b3cfe05ae4f07a96fc3d: registering service...
+2020-04-16 20:16:46.750  INFO 35704 --- [Thread-35] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:46.752  INFO 35704 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:46.756  INFO 35704 --- [Thread-35] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-16 20:16:46.763  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:244073984864b3cfe05ae4f07a96fc3d - registration status: 204
+2020-04-16 20:16:46.767  INFO 35704 --- [Thread-35] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-16 20:16:46.772  INFO 35704 --- [Thread-35] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:244073984864b3cfe05ae4f07a96fc3d - deregister  status: 200
+2020-04-16 20:16:46.777  INFO 35704 --- [Thread-35] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-16 20:16:46.777  INFO 35704 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-04-16 20:16:46.782  INFO 35704 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-04-16 20:16:47.848  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:16:48.721  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:16:48.735  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 2 repository interfaces.
+2020-04-16 20:16:48.829  INFO 35704 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:16:48.867  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f308232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:48.869  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eb0cf64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:48.872  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab4a852f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:49.051  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:16:49.053  INFO 35704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:16:49.053  INFO 35704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:16:49.072  INFO 35704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:16:49.073  INFO 35704 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1221 ms
+2020-04-16 20:16:49.656  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-04-16 20:16:49.661  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2020-04-16 20:16:49.676  INFO 35704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-16 20:16:49.687  INFO 35704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:16:49.749  INFO 35704 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:16:49.827  INFO 35704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:49.852  WARN 35704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:16:50.060  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:16:50.061  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:16:50.137  INFO 35704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:50.155  WARN 35704 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:16:50.705  INFO 35704 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:16:50.775  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64978 (http) with context path ''
+2020-04-16 20:16:50.775  INFO 35704 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 64978
+2020-04-16 20:16:50.781  INFO 35704 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:16:50.787  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:16:50.788  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:16:50.789  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:16:50.789  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:16:50.789  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:16:50.913  INFO 35704 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:16:50.914  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:16:50.914  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:16:50.915  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:16:50.915  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:16:50.915  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:16:50.915  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:16:50.915  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:16:50.922  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:16:50.923  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:16:50.923  INFO 35704 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:16:50.924  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587061010924 with initial instances count: 3
+2020-04-16 20:16:50.926  INFO 35704 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:16:50.927  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587061010927, current=UP, previous=STARTING]
+2020-04-16 20:16:50.927  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:610904bc3e6b8698538abb6ee278fc84: registering service...
+2020-04-16 20:16:50.930  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 3.586 seconds (JVM running for 309.771)
+2020-04-16 20:16:50.938  INFO 35704 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-04-16 20:16:50.947  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:610904bc3e6b8698538abb6ee278fc84 - registration status: 204
+2020-04-16 20:16:53.919  INFO 35704 --- [Thread-49] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application MS-CATEGORIAS with eureka with status DOWN
+2020-04-16 20:16:53.920  WARN 35704 --- [Thread-49] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587061013920, current=DOWN, previous=UP]
+2020-04-16 20:16:53.921  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:610904bc3e6b8698538abb6ee278fc84: registering service...
+2020-04-16 20:16:53.927  INFO 35704 --- [Thread-49] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:53.929  INFO 35704 --- [Thread-49] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:53.934  INFO 35704 --- [Thread-49] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-04-16 20:16:53.955  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:610904bc3e6b8698538abb6ee278fc84 - registration status: 204
+2020-04-16 20:16:53.956  INFO 35704 --- [Thread-49] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-04-16 20:16:53.963  INFO 35704 --- [Thread-49] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:610904bc3e6b8698538abb6ee278fc84 - deregister  status: 200
+2020-04-16 20:16:53.968  INFO 35704 --- [Thread-49] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-04-16 20:16:53.969  INFO 35704 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2020-04-16 20:16:53.975  INFO 35704 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2020-04-16 20:16:54.981  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : No active profile set, falling back to default profiles: default
+2020-04-16 20:16:55.882  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-16 20:16:55.898  INFO 35704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 2 repository interfaces.
+2020-04-16 20:16:55.993  INFO 35704 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44e526df-def4-3253-a254-7a687a719b89
+2020-04-16 20:16:56.028  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f308232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:56.029  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$eb0cf64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:56.032  INFO 35704 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ab4a852f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-16 20:16:56.199  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-04-16 20:16:56.201  INFO 35704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-16 20:16:56.201  INFO 35704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2020-04-16 20:16:56.221  INFO 35704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-16 20:16:56.222  INFO 35704 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1238 ms
+2020-04-16 20:16:56.806  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2020-04-16 20:16:56.812  INFO 35704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2020-04-16 20:16:56.826  INFO 35704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-16 20:16:56.837  INFO 35704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-16 20:16:56.892  INFO 35704 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: com.fernandez.entities.common.model.Category (class must be instantiated by Interceptor)
+2020-04-16 20:16:56.976  INFO 35704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-16 20:16:57.005  WARN 35704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-04-16 20:16:57.218  WARN 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-04-16 20:16:57.218  INFO 35704 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-04-16 20:16:57.298  INFO 35704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-16 20:16:57.317  WARN 35704 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-16 20:16:57.845  INFO 35704 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-16 20:16:57.923  INFO 35704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 65001 (http) with context path ''
+2020-04-16 20:16:57.924  INFO 35704 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 65001
+2020-04-16 20:16:57.927  INFO 35704 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-04-16 20:16:57.933  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-04-16 20:16:57.934  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-04-16 20:16:57.934  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-04-16 20:16:57.935  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-04-16 20:16:57.935  INFO 35704 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-04-16 20:16:58.114  INFO 35704 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-04-16 20:16:58.115  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-04-16 20:16:58.123  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-04-16 20:16:58.124  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-04-16 20:16:58.125  INFO 35704 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-04-16 20:16:58.126  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1587061018126 with initial instances count: 3
+2020-04-16 20:16:58.128  INFO 35704 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MS-CATEGORIAS with eureka with status UP
+2020-04-16 20:16:58.128  INFO 35704 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1587061018128, current=UP, previous=STARTING]
+2020-04-16 20:16:58.129  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:9953d7c875a24b562d0f081aa5d9129f: registering service...
+2020-04-16 20:16:58.131  INFO 35704 --- [restartedMain] c.f.categorias.CategoriesApplication     : Started CategoriesApplication in 3.664 seconds (JVM running for 316.973)
+2020-04-16 20:16:58.141  INFO 35704 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-04-16 20:16:58.150  INFO 35704 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-CATEGORIAS/ms-categorias:9953d7c875a24b562d0f081aa5d9129f - registration status: 204
+2020-04-16 20:17:47.798  INFO 35704 --- [http-nio-auto-5-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-16 20:17:47.798  INFO 35704 --- [http-nio-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-16 20:17:47.807  INFO 35704 --- [http-nio-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-04-16 20:21:56.030 ERROR 35704 --- [http-nio-auto-5-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
 
 org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:85) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
@@ -246,7 +497,7 @@ org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:669) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:310) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at com.fernandez.languages.consumer.LanguageConsumer.obtenerIdiomaPorIso2(LanguageConsumer.java:22) ~[classes/:na]
-	at com.fernandez.categorias.services.CategoriesService.retreiveAllPaginated(CategoriesService.java:49) ~[classes/:na]
+	at com.fernandez.categorias.services.CategoriesService.retreiveAllPaginated(CategoriesService.java:47) ~[classes/:na]
 	at com.fernandez.categorias.controller.CategoriesController.categoriesPaginated(CategoriesController.java:57) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
@@ -312,16 +563,8 @@ org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.14.jar:9.0.14]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
 
-2020-04-14 00:22:51.697  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:26:36.501  INFO 22788 --- [http-nio-auto-1-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2020-04-14 00:26:36.603 DEBUG 22788 --- [http-nio-auto-1-exec-2] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:26:36.662 DEBUG 22788 --- [http-nio-auto-1-exec-2] org.hibernate.SQL                        : select count(categorytr0_.id) as col_0_0_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
-2020-04-14 00:26:45.841 DEBUG 22788 --- [http-nio-auto-1-exec-3] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:27:51.707  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:28:29.375 DEBUG 22788 --- [http-nio-auto-1-exec-5] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
-2020-04-14 00:32:51.714  INFO 22788 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-04-14 00:35:42.293 DEBUG 22788 --- [http-nio-auto-1-exec-7] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
-2020-04-14 00:35:44.968 ERROR 22788 --- [http-nio-auto-1-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
+2020-04-16 20:21:58.118  INFO 35704 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:22:03.512 ERROR 35704 --- [http-nio-auto-5-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.client.HttpClientErrorException$NotFound: 404 null] with root cause
 
 org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:85) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
@@ -333,8 +576,8 @@ org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:669) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:310) ~[spring-web-5.1.4.RELEASE.jar:5.1.4.RELEASE]
 	at com.fernandez.languages.consumer.LanguageConsumer.obtenerIdiomaPorIso2(LanguageConsumer.java:22) ~[classes/:na]
-	at com.fernandez.categorias.services.CategoriesService.retreiveAll(CategoriesService.java:39) ~[classes/:na]
-	at com.fernandez.categorias.controller.CategoriesController.categories(CategoriesController.java:38) ~[classes/:na]
+	at com.fernandez.categorias.services.CategoriesService.retreiveAllPaginated(CategoriesService.java:47) ~[classes/:na]
+	at com.fernandez.categorias.controller.CategoriesController.categoriesPaginated(CategoriesController.java:57) ~[classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_221]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
@@ -399,4 +642,32 @@ org.springframework.web.client.HttpClientErrorException$NotFound: 404 null
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.14.jar:9.0.14]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
 
-2020-04-14 00:35:47.826 DEBUG 22788 --- [http-nio-auto-1-exec-9] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
+2020-04-16 20:24:01.442  INFO 35704 --- [http-nio-auto-5-exec-5] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-04-16 20:24:01.448 DEBUG 35704 --- [http-nio-auto-5-exec-5] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
+2020-04-16 20:24:15.864 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:24:15.868 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.871 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.873 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.875 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.877 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.879 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:24:15.880 DEBUG 35704 --- [http-nio-auto-5-exec-6] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.332 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:25:09.336 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.338 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.340 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.341 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.342 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.344 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:25:09.346 DEBUG 35704 --- [http-nio-auto-5-exec-7] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:26:10.337 DEBUG 35704 --- [http-nio-auto-5-exec-9] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
+2020-04-16 20:26:58.121  INFO 35704 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-04-16 20:27:50.204 DEBUG 35704 --- [http-nio-auto-5-exec-1] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
+2020-04-16 20:28:26.838 DEBUG 35704 --- [http-nio-auto-5-exec-2] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=? limit ?
+2020-04-16 20:29:11.133 DEBUG 35704 --- [http-nio-auto-5-exec-3] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:29:11.136 DEBUG 35704 --- [http-nio-auto-5-exec-3] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:29:11.144 DEBUG 35704 --- [http-nio-auto-5-exec-3] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:29:11.146 DEBUG 35704 --- [http-nio-auto-5-exec-3] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:29:45.591 DEBUG 35704 --- [http-nio-auto-5-exec-4] org.hibernate.SQL                        : select categorytr0_.id as id1_4_, categorytr0_.category_id as category2_4_, categorytr0_.language_id as language3_4_, categorytr0_.name_category_translated as name_cat4_4_ from categorytranslation categorytr0_ where categorytr0_.language_id=?
+2020-04-16 20:29:45.596 DEBUG 35704 --- [http-nio-auto-5-exec-4] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?
+2020-04-16 20:29:45.599 DEBUG 35704 --- [http-nio-auto-5-exec-4] org.hibernate.SQL                        : SELECT count(*) FROM blogs_category WHERE blogs_category.category_id=?

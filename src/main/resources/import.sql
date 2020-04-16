@@ -2,3 +2,5 @@ INSERT INTO categorytranslation(name_category_translated  ,category_id,language_
 INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre[FR]','1','3');
 INSERT INTO categorytranslation(name_category_translated ,category_id,language_id) VALUES('Nombre2[ES]','2','4');
 INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre2[FR]','2','3');
+INSERT INTO categorytranslation(name_category_translated ,category_id,language_id) VALUES('Nombre3[ES]','3','4');
+INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre3[FR]',3','3');
