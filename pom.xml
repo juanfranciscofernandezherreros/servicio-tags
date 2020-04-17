@@ -105,11 +105,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.fernandez.categorias.common</groupId>
-			<artifactId>categoras-common</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>com.fernandez.languages.consumer</groupId>
 			<artifactId>languages-consumer</artifactId>
 			<version>0.0.4-SNAPSHOT</version>
@@ -118,6 +113,11 @@
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fernandez.categories.consumer</groupId>
+			<artifactId>categories-consumer</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

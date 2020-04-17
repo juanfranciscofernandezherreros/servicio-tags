@@ -10,8 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Component;
 
-import com.fernandez.categorias.dto.CategoryDTO;
 import com.fernandez.categorias.repository.CategoryRepository;
+import com.fernandez.categories.consumer.CategoryDTO;
 import com.fernandez.entities.common.model.CategoryTranslation;
 
 @Component
@@ -38,7 +38,7 @@ public class CategoriesAdapter {
 		return categoriesList;
 	}
 
-	private CategoryDTO category2DTO(CategoryTranslation categoryTranslation) {
+	public CategoryDTO category2DTO(CategoryTranslation categoryTranslation) {
 
 		logger.debug("Start CategoriesAdapter - category2DTO" + categoryTranslation);
 
@@ -47,6 +47,7 @@ public class CategoriesAdapter {
 		categoryDTO.setNameCategory(categoryTranslation.getNameCategoryTranslated());
 		categoryDTO.setCategoryId(categoryTranslation.getCategoryId());
 		categoryDTO.setTotal(categoryRepository.countTotalArticlesByCategory(categoryTranslation.getCategoryId()));
+		
 		logger.debug("End CategoriesAdapter - category2DTO" + categoryDTO);
 
 		return categoryDTO;

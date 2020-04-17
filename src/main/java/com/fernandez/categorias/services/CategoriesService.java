@@ -10,9 +10,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fernandez.categorias.adapter.CategoriesAdapter;
-import com.fernandez.categorias.dto.CategoryDTO;
 import com.fernandez.categorias.repository.CategoriesTranslationRepository;
 import com.fernandez.categorias.repository.CategoryRepository;
+import com.fernandez.categories.consumer.CategoryDTO;
 import com.fernandez.entities.common.model.CategoryTranslation;
 import com.fernandez.entities.common.model.Language;
 import com.fernandez.languages.consumer.LanguageConsumer;
@@ -39,6 +39,17 @@ public class CategoriesService {
 		List<CategoryTranslation> categoriesTranslation = categoriesRepository.findByLanguageId(language.getId());		
 		logger.debug("Lista de categorias traducidas --- : " + categoriesTranslation );
 		return categoriesAdapter.convertList2DTO(categoriesTranslation);
+	}
+	
+	public CategoryDTO findById(Long categoryId,String languageId) {
+		logger.debug("CategoriesService - findById :" + categoryId + "languageId" + languageId);
+		LanguageConsumer languageConsumer = new LanguageConsumer();
+		logger.debug("Llamada al servicio de idiomas");
+		Language language = languageConsumer.obtenerIdiomaPorIso2(languageId);
+		logger.debug("Fin llamada al servicio de idiomas --- : " + language );
+		CategoryTranslation categoryTranslation = categoriesRepository.findByLanguageIdAndCategoryId(language.getId(),categoryId);
+		logger.debug("EndCategoriesService - findById :" + categoryTranslation);
+		return categoriesAdapter.category2DTO(categoryTranslation);
 	}
 	
 	public Page<CategoryTranslation> retreiveAllPaginated(String iso2Language,Pageable pageable) {
