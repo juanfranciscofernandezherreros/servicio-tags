@@ -29,10 +29,9 @@ public class CategoriesAdapter {
 		List<CategoryDTO> categoriesList = new ArrayList<CategoryDTO>();
 		for (CategoryTranslation categoryTranslation : categoriesTranslation) {
 			CategoryDTO categoryDTO = category2DTO(categoryTranslation);
-			
 			categoriesList.add(categoryDTO);
 		}
-
+		
 		logger.debug("End CategoriesAdapter - convertList2DTO");
 
 		return categoriesList;
@@ -46,8 +45,7 @@ public class CategoriesAdapter {
 		categoryDTO.setId(categoryTranslation.getId());
 		categoryDTO.setNameCategory(categoryTranslation.getNameCategoryTranslated());
 		categoryDTO.setCategoryId(categoryTranslation.getCategoryId());
-		categoryDTO.setTotal(categoryRepository.countTotalArticlesByCategory(categoryTranslation.getCategoryId()));
-		
+		categoryDTO.setTotal(categoryRepository.countTotalArticlesByCategory(categoryTranslation.getCategoryId(),categoryTranslation.getLanguageId()));
 		logger.debug("End CategoriesAdapter - category2DTO" + categoryDTO);
 
 		return categoryDTO;

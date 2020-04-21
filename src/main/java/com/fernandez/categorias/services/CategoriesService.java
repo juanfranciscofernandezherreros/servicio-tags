@@ -1,5 +1,6 @@
 package com.fernandez.categorias.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -38,7 +39,8 @@ public class CategoriesService {
 		logger.debug("Fin llamada al servicio de idiomas --- : " + language );
 		List<CategoryTranslation> categoriesTranslation = categoriesRepository.findByLanguageId(language.getId());		
 		logger.debug("Lista de categorias traducidas --- : " + categoriesTranslation );
-		return categoriesAdapter.convertList2DTO(categoriesTranslation);
+		List<CategoryDTO> categoryListDTO =  categoriesAdapter.convertList2DTO(categoriesTranslation);		
+		return categoryListDTO;
 	}
 	
 	public CategoryDTO findById(Long categoryId,String languageId) {

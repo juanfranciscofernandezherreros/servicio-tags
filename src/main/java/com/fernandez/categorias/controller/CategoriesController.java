@@ -34,12 +34,8 @@ public class CategoriesController {
 		
 		List<CategoryDTO> imagesList = new ArrayList<CategoryDTO>();
 		
-		if(language!=null) {
-			imagesList = categoriesService.retreiveAll(language);
-		}else {
-			imagesList = categoriesService.retreiveAll("es-ES");
-		}
-		
+		imagesList = categoriesService.retreiveAll(language);
+						
 		logger.debug("End CategoriesController - categories");
 		
 		return ResponseEntity.ok(imagesList);	

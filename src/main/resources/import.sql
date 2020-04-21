@@ -3,4 +3,13 @@ INSERT INTO categorytranslation(name_category_translated  ,category_id,language_
 INSERT INTO categorytranslation(name_category_translated ,category_id,language_id) VALUES('Nombre2[ES]','2','4');
 INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre2[FR]','2','3');
 INSERT INTO categorytranslation(name_category_translated ,category_id,language_id) VALUES('Nombre3[ES]','3','4');
-INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre3[FR]',3','3');
+INSERT INTO categorytranslation(name_category_translated  ,category_id,language_id) VALUES('Nombre3[FR]','3','3');
+INSERT INTO category(clave)VALUES('CAT1');
+INSERT INTO category(clave)VALUES('CAT2');
+INSERT INTO category(clave)VALUES('CAT3');
+INSERT INTO blogs(clave)VALUES('Blog1');
+INSERT INTO blogs(clave)VALUES('Blog2');
+INSERT INTO blogs(clave)VALUES('Blog3');
+INSERT INTO blogs_category(blogs_id,category_id)VALUES(1,1);
+INSERT INTO blogs_category(blogs_id,category_id)VALUES(2,1);
+INSERT INTO blogs_category(blogs_id,category_id)VALUES(2,3);
