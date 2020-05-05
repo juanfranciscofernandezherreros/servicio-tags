@@ -2,6 +2,7 @@ package com.fernandez.categorias.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,13 +11,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.fernandez.blogs.consumer.BlogDTO;
+import com.fernandez.blogs.consumer.BlogsFeignClient;
 import com.fernandez.categorias.adapter.CategoriesAdapter;
 import com.fernandez.categorias.repository.CategoriesTranslationRepository;
 import com.fernandez.categorias.repository.CategoryRepository;
 import com.fernandez.categories.consumer.CategoryDTO;
+import com.fernandez.entities.common.model.BlogsCategory;
+import com.fernandez.entities.common.model.BlogsTranslation;
+import com.fernandez.entities.common.model.Category;
 import com.fernandez.entities.common.model.CategoryTranslation;
 import com.fernandez.entities.common.model.Language;
-import com.fernandez.languages.consumer.LanguageConsumer;
+import com.fernandez.languages.consumer.LanguageFeignClient;
 
 @Service
 public class CategoriesService {
@@ -24,16 +30,21 @@ public class CategoriesService {
 	Logger logger = LoggerFactory.getLogger(CategoriesService.class);
 	
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private LanguageFeignClient languageConsumer;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;	
 	
 	@Autowired
 	private CategoriesTranslationRepository categoriesRepository;
 	
 	@Autowired
 	private CategoriesAdapter categoriesAdapter;
+
+	@Autowired
+	private BlogsFeignClient blogsFeignClient;
 	
 	public List<CategoryDTO> retreiveAll(String iso2Language) {
-		LanguageConsumer languageConsumer = new LanguageConsumer();
 		logger.debug("Llamada al servicio de idiomas");
 		Language language = languageConsumer.obtenerIdiomaPorIso2(iso2Language);
 		logger.debug("Fin llamada al servicio de idiomas --- : " + language );
@@ -45,17 +56,28 @@ public class CategoriesService {
 	
 	public CategoryDTO findById(Long categoryId,String languageId) {
 		logger.debug("CategoriesService - findById :" + categoryId + "languageId" + languageId);
-		LanguageConsumer languageConsumer = new LanguageConsumer();
 		logger.debug("Llamada al servicio de idiomas");
 		Language language = languageConsumer.obtenerIdiomaPorIso2(languageId);
 		logger.debug("Fin llamada al servicio de idiomas --- : " + language );
 		CategoryTranslation categoryTranslation = categoriesRepository.findByLanguageIdAndCategoryId(language.getId(),categoryId);
 		logger.debug("EndCategoriesService - findById :" + categoryTranslation);
-		return categoriesAdapter.category2DTO(categoryTranslation);
+		CategoryDTO categoryDTO =  categoriesAdapter.category2DTO(categoryTranslation);
+		categoryDTO.setTotal(categoryRepository.countTotalArticlesByCategory(categoryTranslation.getCategoryId(),categoryTranslation.getLanguageId()));
+		return categoryDTO;
+	}
+	
+	public List<BlogDTO> blogsDTOFilteredByCategory(String language,Long categoryId){	
+		Language languages = languageConsumer.obtenerIdiomaPorIso2(language);
+		CategoryTranslation categoryTranslationRepository = categoriesRepository.findByLanguageIdAndCategoryId(languages.getId(),categoryId);
+		Optional<Category> category = categoryRepository.findById(categoryTranslationRepository.getCategoryId());
+		List<BlogDTO>  blogsDtoList = new ArrayList<BlogDTO>();
+		if(category.isPresent()) {
+			blogsDtoList = blogsFeignClient.buscarBlogsPorCategoria(language, categoryId);
+		}
+		return blogsDtoList;
 	}
 	
 	public Page<CategoryTranslation> retreiveAllPaginated(String iso2Language,Pageable pageable) {
-		LanguageConsumer languageConsumer = new LanguageConsumer();
 		logger.debug("Llamada al servicio de idiomas");
 		Language language = languageConsumer.obtenerIdiomaPorIso2(iso2Language);
 		logger.debug("Fin llamada al servicio de idiomas --- : " + language );

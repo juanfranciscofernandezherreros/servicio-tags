@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fernandez.blogs.consumer.BlogDTO;
 import com.fernandez.categorias.services.CategoriesService;
 import com.fernandez.categories.consumer.CategoryDTO;
 import com.fernandez.entities.common.model.CategoryTranslation;
@@ -41,6 +42,20 @@ public class CategoriesController {
 		return ResponseEntity.ok(imagesList);	
 	
 	}	
+	
+	@GetMapping(value = "/v1/articles/{categoryId}")
+	public ResponseEntity<List<BlogDTO>> findArticleByCategory(@RequestHeader("accept-language") String language,@PathVariable("categoryId") Long categoryId){
+		
+		logger.debug("Start CategoriesController - findArticleByCategory");
+		
+		List<BlogDTO> blogDTOList = new ArrayList<BlogDTO>();
+		
+		blogDTOList = categoriesService.blogsDTOFilteredByCategory(language,categoryId);
+		
+		logger.debug("End CategoriesController - findArticleByCategory");
+
+		return ResponseEntity.ok(blogDTOList);	
+	}
 	
 	@GetMapping(value = "/v1/{categoryId}")
 	public ResponseEntity<CategoryDTO> findById(@RequestHeader("accept-language") String language,@PathVariable("categoryId") Long categoryId){
