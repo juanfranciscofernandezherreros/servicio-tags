@@ -3,6 +3,7 @@ package com.fernandez.categorias.controller;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,32 @@ public class CategoriesController {
 		return ResponseEntity.ok(imagesList);	
 	
 	}	
+	
+	@GetMapping("/v1/translation/{categoryTranslationId}")
+	public ResponseEntity<CategoryTranslation> categoryTranslation(@PathVariable("categoryTranslationId") Long categoryTranslationId) {
+		
+		logger.debug("Start CategoryTranslation");
+				
+		CategoryTranslation categoryTranslation = categoriesService.findCategoryTranslation(categoryTranslationId);
+						
+		logger.debug("End CategoryTranslation");
+		
+		return ResponseEntity.ok(categoryTranslation);	
+	}
+
+	
+	@GetMapping(value = "/v1/{blogTranslationId}/articles")
+	public ResponseEntity<List<CategoryDTO>> categoriesCheck(@PathVariable("blogTranslationId") Long blogTranslationId) {
+		logger.debug("Start CategoriesController - categories");
+				
+		List<CategoryDTO> categoryListDTO = categoriesService.checkIfBlogHasCategory(blogTranslationId);
+						
+		logger.debug("End CategoriesController - categories");
+		
+		return ResponseEntity.ok(categoryListDTO);	
+  
+		
+	}
 	
 	@GetMapping(value = "/v1/articles/{categoryId}")
 	public ResponseEntity<List<BlogDTO>> findArticleByCategory(@RequestHeader("accept-language") String language,@PathVariable("categoryId") Long categoryId){

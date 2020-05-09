@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Component;
 
+import com.fernandez.categorias.repository.CategoryRepository;
 import com.fernandez.categories.consumer.CategoryDTO;
 import com.fernandez.entities.common.model.CategoryTranslation;
 
@@ -17,6 +19,10 @@ public class CategoriesAdapter {
 	
 	Logger logger = LoggerFactory.getLogger(CategoriesAdapter.class);
 
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	public List<CategoryDTO> convertList2DTO(List<CategoryTranslation> categoriesTranslation) {
 
 		logger.debug("Start CategoriesAdapter - convertList2DTO");
@@ -38,7 +44,7 @@ public class CategoriesAdapter {
 
 		CategoryDTO categoryDTO = new CategoryDTO();
 		categoryDTO.setId(categoryTranslation.getId());
-		categoryDTO.setNameCategory(categoryTranslation.getNameCategoryTranslated());
+		categoryDTO.setNameCategoryTranslated(categoryTranslation.getNameCategoryTranslated());
 		categoryDTO.setCategoryId(categoryTranslation.getCategoryId());
 		logger.debug("End CategoriesAdapter - category2DTO" + categoryDTO);
 
