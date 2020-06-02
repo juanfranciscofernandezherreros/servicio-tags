@@ -122,16 +122,28 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fernandez.blog.consumer</groupId>
-			<artifactId>blog-consumer-dto</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>5.1</version>
 		</dependency>
-
+		<!-- MS BLOGS -->
+		<dependency>
+			<groupId>com.fernandez.blogs</groupId>
+			<artifactId>blogs</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- MS BLOGS CONSUMER -->
+		<dependency>
+			<groupId>com.fernandez.blog.consumer</groupId>
+			<artifactId>blog-consumer-dto</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- DOCUMENTACION | API -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.2.32</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

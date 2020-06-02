@@ -18,7 +18,6 @@ import com.fernandez.entities.common.model.CategoryTranslation;
 public class CategoriesAdapter {
 	
 	Logger logger = LoggerFactory.getLogger(CategoriesAdapter.class);
-
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
@@ -46,6 +45,7 @@ public class CategoriesAdapter {
 		categoryDTO.setId(categoryTranslation.getId());
 		categoryDTO.setNameCategoryTranslated(categoryTranslation.getNameCategoryTranslated());
 		categoryDTO.setCategoryId(categoryTranslation.getCategoryId());
+		categoryDTO.setLanguageId(categoryTranslation.getLanguageId());
 		logger.debug("End CategoriesAdapter - category2DTO" + categoryDTO);
 
 		return categoryDTO;

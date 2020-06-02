@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @EnableEurekaClient
-@EnableFeignClients(basePackages = {"com.fernandez.languages.consumer","com.fernandez.blogs.consumer"})
+@EnableFeignClients(basePackages = {"com.fernandez.languages.consumer","com.fernandez.blogs.controller"})
 @EnableJpaAuditing
 @SpringBootApplication
 @EntityScan("com.fernandez.entities.common.*")
