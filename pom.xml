@@ -126,12 +126,7 @@
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>5.1</version>
 		</dependency>
-		<!-- MS BLOGS -->
-		<dependency>
-			<groupId>com.fernandez.blogs</groupId>
-			<artifactId>blogs</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 		<!-- MS BLOGS CONSUMER -->
 		<dependency>
 			<groupId>com.fernandez.blog.consumer</groupId>

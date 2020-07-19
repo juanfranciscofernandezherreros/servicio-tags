@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fernandez.blogs.service.ListToPageService;
 import com.fernandez.categorias.controller.CategoriesController;
 import com.fernandez.categorias.services.CategoriesService;
+import com.fernandez.categorias.services.ListToPageService;
 import com.fernandez.categorias.services.impl.CategoriesServiceImpl;
 import com.fernandez.categories.consumer.CategoryDTO;
 

@@ -7,7 +7,8 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.fernandez.blogs.service.ListToPageService;
+import com.fernandez.categorias.services.ListToPageService;
+
 
 @Service
 public class ListToPageImpl implements ListToPageService{
