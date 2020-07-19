@@ -127,12 +127,7 @@
 			<version>5.1</version>
 		</dependency>
 		
-		<!-- MS BLOGS CONSUMER -->
-		<dependency>
-			<groupId>com.fernandez.blog.consumer</groupId>
-			<artifactId>blog-consumer-dto</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 		<!-- DOCUMENTACION | API -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
