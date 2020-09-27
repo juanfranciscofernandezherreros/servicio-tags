@@ -13,7 +13,6 @@
 
 	<groupId>com.fernandez</groupId>
 	<artifactId>categorias</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
 	<name>servicio-categorias</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -55,10 +54,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -105,22 +101,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.fernandez.entities.common</groupId>
-			<artifactId>entities-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fernandez.categories.consumer</groupId>
-			<artifactId>categories-consumer</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fernandez.languages.consumer</groupId>
-			<artifactId>languages-consumer</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
