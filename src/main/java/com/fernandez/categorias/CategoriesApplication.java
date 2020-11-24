@@ -13,10 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 @ComponentScan("com.fernandez.categorias.*")
 @EnableSwagger2
-public class CategoriasApplication {
+public class CategoriesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CategoriasApplication.class, args);
+		SpringApplication.run(CategoriesApplication.class, args);
 	}
 
 }

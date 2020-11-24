@@ -1,16 +1,15 @@
 package com.fernandez.categorias.services;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.fernandez.categorias.dto.CategoryDTO;
-import com.fernandez.categorias.model.Categories;
 
 public interface CategoriesService {
 
-	List<CategoryDTO> retreiveAll(Long languageId);
+	Page<CategoryDTO> retreiveAll(String acceptLanguage,Pageable pageable);
 
-	CategoryDTO findById(Long categoryId, Long languageId);
+	CategoryDTO findById(Long categoryId);
 
-	List<Categories> retreiveAllCategories();
 
 }

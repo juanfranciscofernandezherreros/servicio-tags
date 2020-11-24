@@ -129,7 +129,7 @@ com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutExceptio
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:14)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:14)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -225,7 +225,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:14)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:14)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -603,7 +603,7 @@ java.sql.SQLException: Access denied for user ''@'localhost' (using password: NO
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -675,7 +675,7 @@ org.springframework.jdbc.support.MetaDataAccessException: Could not get Connecti
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -785,7 +785,7 @@ java.sql.SQLException: Access denied for user ''@'localhost' (using password: NO
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -944,7 +944,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1046,7 +1046,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1188,7 +1188,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1396,7 +1396,7 @@ java.sql.SQLException: Access denied for user ''@'localhost' (using password: NO
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1468,7 +1468,7 @@ org.springframework.jdbc.support.MetaDataAccessException: Could not get Connecti
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1575,7 +1575,7 @@ java.sql.SQLException: Access denied for user ''@'localhost' (using password: NO
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1780,7 +1780,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1892,7 +1892,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -2004,7 +2004,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -2066,7 +2066,7 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 	...]
 2020-08-30 18:27:58.519  INFO 15432 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
 2020-08-30 18:27:58.529  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-30 18:27:58.535  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
+2020-08-30 18:27:58.535  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
 2020-08-30 18:27:58.536  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-08-30 18:27:58.536  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
 2020-08-30 18:27:58.538  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
@@ -2076,7 +2076,7 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2020-08-30 18:27:58.546 ERROR 15432 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151)
@@ -2095,13 +2095,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@62bb720a]
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568)
@@ -2142,7 +2142,7 @@ Caused by: java.lang.ClassNotFoundException: CategoryTranslation
 	...]
 2020-08-30 18:28:04.661  INFO 15432 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
 2020-08-30 18:28:04.672  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-30 18:28:04.679  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
+2020-08-30 18:28:04.679  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
 2020-08-30 18:28:04.679  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-08-30 18:28:04.680  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
 2020-08-30 18:28:04.682  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
@@ -2152,7 +2152,7 @@ Caused by: java.lang.ClassNotFoundException: CategoryTranslation
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2020-08-30 18:28:04.690 ERROR 15432 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151)
@@ -2171,13 +2171,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@26a98e51]
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568)
@@ -2218,7 +2218,7 @@ Caused by: java.lang.ClassNotFoundException: CategoryTranslation
 	...]
 2020-08-30 18:28:11.246  INFO 15432 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
 2020-08-30 18:28:11.256  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-08-30 18:28:11.263  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
+2020-08-30 18:28:11.263  WARN 15432 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
 2020-08-30 18:28:11.263  INFO 15432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-08-30 18:28:11.264  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
 2020-08-30 18:28:11.265  INFO 15432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
@@ -2228,7 +2228,7 @@ Caused by: java.lang.ClassNotFoundException: CategoryTranslation
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2020-08-30 18:28:11.274 ERROR 15432 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'categoriesAdapter': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1236)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1151)
@@ -2247,13 +2247,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
-	at com.fernandez.categorias.CategoriasApplication.main(CategoriesApplication.java:19)
+	at com.fernandez.categorias.CategoriesApplication.main(CategoriesApplication.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriasAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.fernandez.categorias.adapter.CategoriesAdapter] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7e0cd134]
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:686)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:583)
 	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:568)
