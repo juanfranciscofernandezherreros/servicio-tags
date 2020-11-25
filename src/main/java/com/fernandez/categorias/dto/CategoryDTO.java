@@ -1,5 +1,7 @@
 package com.fernandez.categorias.dto;
 
+import com.fernandez.categorias.model.CategoryTranslation;
+
 public class CategoryDTO {
 
 	private Long id;
@@ -8,7 +10,12 @@ public class CategoryDTO {
 	private Long categoryId;
 	private Long languageId;
 	private String clave;
-	private boolean hasCategory;
+
+	public CategoryDTO(CategoryTranslation categoryTranslation) {
+	}
+
+	public CategoryDTO() {
+	}
 
 	public Long getId() {
 		return id;
@@ -58,19 +65,10 @@ public class CategoryDTO {
 		this.clave = clave;
 	}
 
-	public boolean isHasCategory() {
-		return hasCategory;
-	}
-
-	public void setHasCategory(boolean hasCategory) {
-		this.hasCategory = hasCategory;
-	}
-
 	@Override
 	public String toString() {
 		return "CategoryDTO [id=" + id + ", nameCategoryTranslated=" + nameCategoryTranslated + ", total=" + total
-				+ ", categoryId=" + categoryId + ", languageId=" + languageId + ", clave=" + clave + ", hasCategory="
-				+ hasCategory + "]";
+				+ ", categoryId=" + categoryId + ", languageId=" + languageId + ", clave=" + clave + "]";
 	}
 
 }

@@ -26,6 +26,9 @@ public class CategoryTranslation {
 	@JoinColumn(name = "category_translation")
 	private Category category;
 
+	public CategoryTranslation() {
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -20,7 +20,7 @@ public class CategoriesControllerImpl implements CategoriasController {
 
 	@Override
 	public ResponseEntity<Page<CategoryDTO>> findAllCategories(@RequestHeader("accept-language") String acceptLanguage , Pageable pageable) {
-		Page<CategoryDTO> listBlogs = categoriesService.retreiveAll(acceptLanguage, pageable);
+		Page<CategoryDTO> listBlogs = categoriesService.findAll(acceptLanguage, pageable);
 		return ResponseEntity.ok(listBlogs);
 	}
 
