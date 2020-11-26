@@ -12,9 +12,9 @@
 	</parent>
 
 	<groupId>com.fernandez</groupId>
-	<artifactId>categorias</artifactId>
-	<name>servicio-categorias</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>tags</artifactId>
+	<name>servicio-tags</name>
+	<description>Servicio tags</description>
 
 	<properties>
 		<java.version>1.8</java.version>

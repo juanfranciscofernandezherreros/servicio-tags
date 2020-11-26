@@ -1,16 +1,19 @@
-package com.fernandez.categorias.model;
+package com.fernandez.tags.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "languages")
-public class Language implements Serializable {
+@Table(name = "tags")
+public class Tags implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -19,9 +22,23 @@ public class Language implements Serializable {
 
 	private String clave;
 
-	private String iso2;
+	@OneToMany(mappedBy = "tags", cascade = CascadeType.MERGE, orphanRemoval = true)
+	private List<TagsTranslation> tagsTranslation;
 
-	private String iso3;
+	public Tags() {
+		super();
+	}
+
+	public Tags(String clave, List<TagsTranslation> tagsTranslation) {
+		super();
+		this.clave = clave;
+		this.tagsTranslation = tagsTranslation;
+	}
+
+	public Tags(String clave) {
+		super();
+		this.clave = clave;
+	}
 
 	@Override
 	public int hashCode() {
@@ -29,8 +46,7 @@ public class Language implements Serializable {
 		int result = 1;
 		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((iso2 == null) ? 0 : iso2.hashCode());
-		result = prime * result + ((iso3 == null) ? 0 : iso3.hashCode());
+		result = prime * result + ((tagsTranslation == null) ? 0 : tagsTranslation.hashCode());
 		return result;
 	}
 
@@ -42,7 +58,7 @@ public class Language implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Language other = (Language) obj;
+		Tags other = (Tags) obj;
 		if (clave == null) {
 			if (other.clave != null)
 				return false;
@@ -53,15 +69,10 @@ public class Language implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (iso2 == null) {
-			if (other.iso2 != null)
+		if (tagsTranslation == null) {
+			if (other.tagsTranslation != null)
 				return false;
-		} else if (!iso2.equals(other.iso2))
-			return false;
-		if (iso3 == null) {
-			if (other.iso3 != null)
-				return false;
-		} else if (!iso3.equals(other.iso3))
+		} else if (!tagsTranslation.equals(other.tagsTranslation))
 			return false;
 		return true;
 	}
@@ -82,25 +93,21 @@ public class Language implements Serializable {
 		this.clave = clave;
 	}
 
-	public String getIso2() {
-		return iso2;
+	public List<TagsTranslation> getTagsTranslation() {
+		return tagsTranslation;
 	}
 
-	public void setIso2(String iso2) {
-		this.iso2 = iso2;
+	public void setTagsTranslation(List<TagsTranslation> tagsTranslation) {
+		this.tagsTranslation = tagsTranslation;
 	}
 
-	public String getIso3() {
-		return iso3;
-	}
-
-	public void setIso3(String iso3) {
-		this.iso3 = iso3;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
 	public String toString() {
-		return "Language [id=" + id + ", clave=" + clave + ", iso2=" + iso2 + ", iso3=" + iso3 + "]";
+		return "TagsController [id=" + id + ", clave=" + clave + ", tagsTranslation=" + tagsTranslation + "]";
 	}
 
 }

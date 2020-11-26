@@ -1,4 +1,4 @@
-package com.fernandez.categorias.utils;
+package com.fernandez.tags.utils;
 public class LanguageUtils {
 
 	public static Long convertFromHeaderToLong(String acceptLanguage) {

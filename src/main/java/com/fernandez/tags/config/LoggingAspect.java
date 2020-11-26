@@ -1,4 +1,4 @@
-package com.fernandez.categorias.config;
+package com.fernandez.tags.config;
 
 import java.util.Arrays;
 
@@ -38,8 +38,8 @@ public class LoggingAspect {
 	 * Pointcut that matches all Spring beans in the application's main packages.
 	 */
 	@Pointcut("within(com.fernandez.blogs..*)"
-			+ " || within(com.fernandez.categorias.service.impl..*)"
-			+ " || within(com.fernandez.categorias.controller..*)")
+			+ " || within(com.fernandez.tags.service.impl..*)"
+			+ " || within(com.fernandez.tags.controller..*)")
 	public void applicationPackagePointcut() {
 		// Method is empty as this is just a Pointcut, the implementations are in the
 		// advices.

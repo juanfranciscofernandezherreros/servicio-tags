@@ -1,4 +1,4 @@
-package com.fernandez.categorias;
+package com.fernandez.tags;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,12 +11,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableEurekaClient
-@ComponentScan("com.fernandez.categorias.*")
+@ComponentScan("com.fernandez.tags.*")
 @EnableSwagger2
-public class CategoriesApplication {
+public class TagsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CategoriesApplication.class, args);
+		SpringApplication.run(TagsApplication.class, args);
 	}
 
 }
