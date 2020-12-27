@@ -107,7 +107,7 @@ public class Tags implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TagsController [id=" + id + ", clave=" + clave + ", tagsTranslation=" + tagsTranslation + "]";
+		return "Tags [id=" + id + ", clave=" + clave + ", tagsTranslation=" + tagsTranslation + "]";
 	}
 
 }

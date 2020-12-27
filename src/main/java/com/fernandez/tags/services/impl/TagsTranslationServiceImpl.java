@@ -1,12 +1,12 @@
 package com.fernandez.tags.services.impl;
 
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.Function;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fernandez.tags.adapter.TagsResponseAdapter;
@@ -29,12 +29,24 @@ public class TagsTranslationServiceImpl implements TagsService {
 	private LanguageRepository languageRepository;
 
 	@Override
-	public List<TagsDTO> findAll(String acceptLanguage) {		
+	public Page<TagsDTO> findAll(String acceptLanguage,Pageable pageable) {
+		Page<TagsDTO> dtoPage = null;
 		Language language = languageRepository.findByIso2(acceptLanguage.toLowerCase());
-		List<TagsTranslation> tagsTranslationList = tagsTranslationRepository.findAllByLanguage(language);
-		List<TagsTranslation> copy = new ArrayList<>(tagsTranslationList);
-		List<TagsDTO> tagsDtoList = TagsResponseAdapter.mapToTagsDTO(tagsTranslationList);
-		return tagsDtoList;
+		Page<TagsTranslation> pageTagsTranslations = tagsTranslationRepository.findAllByLanguage(language,pageable);
+		dtoPage = mapToTagTranslationResponseDTO(pageTagsTranslations);			
+		return dtoPage;
+	}
+	
+	private Page<TagsDTO> mapToTagTranslationResponseDTO(Page<TagsTranslation> tagsTranslation) {
+		Page<TagsDTO> dtoPage;
+		dtoPage = tagsTranslation.map(new Function<TagsTranslation, TagsDTO>() {
+			@Override
+			public TagsDTO apply(TagsTranslation tagsTranslation) {
+				TagsDTO tagsTranslationReponseDTO = TagsResponseAdapter.mapToTagDTO(tagsTranslation);
+				return tagsTranslationReponseDTO;
+			}
+		});
+		return dtoPage;
 	}
 
 }

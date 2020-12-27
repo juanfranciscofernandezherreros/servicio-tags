@@ -1,11 +1,12 @@
 package com.fernandez.tags.services;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.fernandez.tags.dto.TagsDTO;
 
 public interface TagsService {
 
-	List<TagsDTO> findAll(String acceptLanguage);
+	Page<TagsDTO> findAll(String acceptLanguage,Pageable pageable);
 
 }
