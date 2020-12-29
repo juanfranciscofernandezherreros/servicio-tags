@@ -6,6 +6,7 @@ public class TagsDTO {
 	private Long tagsTranslationId;
 	private String clave;
 	private String nameTagsTranslated;
+	private String slug;
 
 	public Long getId() {
 		return id;
@@ -39,10 +40,19 @@ public class TagsDTO {
 		this.nameTagsTranslated = nameTagsTranslated;
 	}
 
+	public String getSlug() {
+		return slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+
 	@Override
 	public String toString() {
-		return "TagsDTO [id=" + id + ", tagsTranslationId=" + tagsTranslationId + ", clave=" + clave
-				+ ", nameTagsTranslated=" + nameTagsTranslated + "]";
+		return "TagsDTO [id=" + id + ", tagsTranslationId=" + tagsTranslationId
+				+ ", clave=" + clave + ", nameTagsTranslated="
+				+ nameTagsTranslated + ", slug=" + slug + "]";
 	}
 
 }

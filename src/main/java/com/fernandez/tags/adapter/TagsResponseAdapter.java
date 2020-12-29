@@ -23,6 +23,7 @@ public class TagsResponseAdapter {
 		tagDTO.setClave(tagsTranslation.getTags().getClave());
 		tagDTO.setTagsTranslationId(tagsTranslation.getId());
 		tagDTO.setNameTagsTranslated(tagsTranslation.getNameTagsTranslated());
+		tagDTO.setSlug(tagsTranslation.getSlug());
 		return tagDTO;
 	}
 }
