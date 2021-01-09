@@ -1,4 +1,4 @@
 FROM openjdk:8
 VOLUME /tmp
-ADD ./target/categorias-0.0.2-SNAPSHOT.jar servicio-categorias.jar
-ENTRYPOINT ["java","-jar","/servicio-categorias.jar"]
+ADD ./target/tags-2.1.2.RELEASE.jar servicio-tags.jar
+ENTRYPOINT ["java","-jar","servicio-tags.jar"]
