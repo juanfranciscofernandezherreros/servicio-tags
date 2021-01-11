@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableJpaAuditing
-@EnableEurekaClient
 @ComponentScan("com.fernandez.tags.*")
 @EnableSwagger2
 public class TagsApplication {
